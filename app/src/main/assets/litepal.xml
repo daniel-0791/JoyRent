@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <!--数据库名字-->
+    <dbname value="user" />
+    <!--数据库版本-->
+    <version value="12" />
+    <list>
+        <!--根据model映射创建表-->
+        <mapping class="com.daniel.JoyRent.beans.PersonInfo" />
+        <mapping class="com.daniel.JoyRent.beans.HousesBean" />
+
+    </list>
+    <!--将数据库文件存放在sd卡，调试时使用（internal，external）-->
+    <!--<storage value="external" />-->
+</litepal>
+

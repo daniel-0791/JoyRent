@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+
+    <tab
+        id="@+id/tab_HomePage"
+        title="首页"
+        icon="@mipmap/ic_favorites"
+        barColorWhenSelected="#FFFFFF"
+        />
+    <tab
+        id="@+id/tab_nearby"
+        title="发布"
+        icon="@mipmap/ic_nearby"
+        barColorWhenSelected="#FFFFFF"
+        />
+
+    <tab
+        id="@+id/tab_mine"
+        title="我的"
+        icon="@mipmap/ic_friends"
+        barColorWhenSelected="#FFFFFF"
+        />
+
+</tabs>
+

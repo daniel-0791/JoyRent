@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">JoyRent</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="navigation_news">房源</string>
+    <string name="navigation_images">求租</string>
+    <string name="navigation_houses">求租</string>
+    <string name="navigation_weather">个人信息</string>
+    <string name="navigation_about">关于</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="name">合租者_9527</string>
+    <string name="app_description">传统合租有很多的弊端，第一无法有效的甄别发布者的真实身份;第二，发布者处于一个信息强势的地位，而最应该照顾的求租者特别是寻求合租的用户在整个系统中只能被动的接受信息</string>
+    <string name="app_github_url">目前的一线城市中，合租人群已经成为了租房人群的最大群体，他们在选择合租伙伴时，对对方的生活习惯，工作性质，以及一些禁忌等真实信息有比较强烈的需求</string>
+    <string name="author">基于上述的需求，分析了其中的关键点，即合租用户在传统的租房需求的基础上，更加关注合租者本身的情况，正是基于这个特点，建立一个有别于传统租房网站的应用场景，网站在展示房源信息的同时，将求租者和出租者的个人信息同时展现出来，而这部分个人信息即通过用户绑定的社交网站账户同步导入到本网站中，这就实现了本课题的双重需求，完全满足了用户的关注点</string>
+
+    <string name="blog">博客：http://www.liuling123.com</string>
+
+    <string name="top">房源</string>
+    <string name="nba">室友</string>
+    <string name="cars">位置区域</string>
+    <string name="jokes">收藏</string>
+
+    <string name="jingxuan">精选</string>
+    <string name="qutu">趣图</string>
+    <string name="meitu">美图</string>
+    <string name="story">故事</string>
+
+    <string name="load_fail">加载数据失败!</string>
+    <string name="title_activity_news_detail">NewsDetailActivity</string>
+
+    <string name="image_hit">一次只加载20条，查看更多内容请刷新哦。</string>
+
+
+    <string name="login_success">login success</string>
+    <string name="login">注册</string>
+    <string name="Username">用户名</string>
+    <string name="Password">密码</string>
+    <string name="forgot_your_password">Forgot your password ?</string>
+    <string name="go">go</string>
+    <string name="repeat_password">第二次输入密码</string>
+    <string name="next">下一步</string>
+    <string name="register">注册</string>
+
+
+    <!--个人界面-->
+    <string name="auther">Jerry</string>
+    <string name="email">2459597545@qq.com</string>
+
+    <string name="shopping_car">购物车</string>
+    <string name="consume_history">购买记录</string>
+    <string name="wallet">钱包</string>
+    <string name="sign">姓名</string>
+    <string name="today_has_sign">签到</string>
+    <string name="receive_address">性别</string>
+    <string name="my_agent">出生日期</string>
+    <string name="i_want_a_teacher">体重</string>
+    <string name="start_luck">今日锻炼</string>
+    <string name="invite_reward">睡眠 </string>
+    <string name="set">修改密码</string>
+    <string name="title_activity_menu">menu</string>
+    <string name="title_home">首页</string>
+    <string name="title_dashboard">运动量</string>
+    <string name="title_notifications">我的</string>
+    <string name="title_item_list">Items</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="spinner2">
+        <item>有</item>
+        <item>无</item>
+
+    </string-array>
+
+    <string-array name="spinner3">
+        <item>一室一厅</item>
+        <item>两室一厅</item>
+        <item>两室两厅</item>
+        <item>三室一厅</item>
+        <item>三室两厅</item>
+        <item>四室三厅</item>
+
+    </string-array>
+
+</resources>

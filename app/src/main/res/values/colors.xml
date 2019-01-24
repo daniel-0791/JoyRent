@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary">#4cbfb5</color>
+    <color name="primary_dark">#c9c9c9</color>
+    <color name="primary_light">#FFCDD2</color>
+    <color name="accent">#CDDC39</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="gray">#666666</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#333333</color>
+    <color name="orange">#FFA500</color>
+    <color name="red">#FF0000</color>
+    <color name="gold">#FFD700</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="blue">#0000FF</color>
+    <color name="purple">#800080</color>
+    <color name="pink">#FFC0CB</color>
+    <color name="greens">#4cbfb5</color>
+    <color name="text_green">#00a496</color>
+    <color name="horizontal_line">#e5e5e5</color>
+    <color name="footer_text_color_selected">#00a496</color>
+    <color name="footer_text_color_normal">#c9c9c9</color>
+    <color name="light_gray">#999999</color>
+    <color name="app_bg">#f9f9f9</color>
+    <color name="pay_red">#e35151</color>
+    <color name="common_action_bar_splitter">#d2d2d2</color>
+
+    <color name="black_dft">#3c3c3c</color>
+    <color name="translate">#00000000</color>
+    <color name="bg_main">#f0eff4</color>
+    <color name="gray_dft">#888888</color>
+    <color name="dividing_light">#f0f0f0</color>
+    <color name="dividing_dark">#c9c9c9</color>
+
+    <color name="orange_dft">#f2a732</color>
+
+</resources>
