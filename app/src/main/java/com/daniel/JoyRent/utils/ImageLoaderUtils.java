@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.lauren.simplenews.R;
+import com.daniel.JoyRent.R;
 
 
 public class ImageLoaderUtils {

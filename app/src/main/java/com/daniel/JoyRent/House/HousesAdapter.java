@@ -9,9 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.beans.HousesBean;
 import com.daniel.JoyRent.utils.ImageLoaderUtils;
-import com.lauren.simplenews.R;
+
 
 import java.util.List;
 

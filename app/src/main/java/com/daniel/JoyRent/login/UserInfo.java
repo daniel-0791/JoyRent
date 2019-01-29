@@ -6,10 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.beans.PersonInfo;
 import com.daniel.JoyRent.commons.Urls;
 import com.daniel.JoyRent.utils.ImageLoaderUtils;
-import com.lauren.simplenews.R;
+
 import com.roughike.bottombar.BottomBar;
 
 import org.litepal.crud.DataSupport;

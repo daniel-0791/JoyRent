@@ -1,7 +1,8 @@
 package com.daniel.JoyRent.main.presenter;
 
+import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.main.view.MainView;
-import com.lauren.simplenews.R;
+
 
 public class MainPresenterImpl implements MainPresenter {  //当行
 

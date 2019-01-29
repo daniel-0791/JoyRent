@@ -14,8 +14,9 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ScrollView;
 
+import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.login.utils.SizeUtils;
-import com.lauren.simplenews.R;
+
 
 
 /**

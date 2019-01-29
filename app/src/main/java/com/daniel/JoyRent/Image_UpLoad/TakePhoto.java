@@ -12,10 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.commons.Urls;
 import com.daniel.JoyRent.login.Login;
 import com.daniel.JoyRent.utils.OkHttp3Util;
-import com.lauren.simplenews.R;
+
 import com.squareup.picasso.Picasso;
 
 import java.io.File;

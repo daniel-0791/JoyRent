@@ -8,8 +8,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.login.impl.ActionBarClickListener;
-import com.lauren.simplenews.R;
+
 
 
 /**

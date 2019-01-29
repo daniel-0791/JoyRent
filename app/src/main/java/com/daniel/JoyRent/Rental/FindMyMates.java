@@ -3,7 +3,8 @@ package com.daniel.JoyRent.Rental;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.lauren.simplenews.R;
+import com.daniel.JoyRent.R;
+
 
 public class FindMyMates extends AppCompatActivity {
 

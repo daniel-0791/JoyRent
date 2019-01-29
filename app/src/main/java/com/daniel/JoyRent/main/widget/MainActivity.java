@@ -14,6 +14,8 @@ import android.view.View;
 
 import com.daniel.JoyRent.House.widget.HousesFragment;
 import com.daniel.JoyRent.House.widget.nav_secondFrament;
+import com.daniel.JoyRent.Map.MapMain;
+import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.Rental.RentalHouses;
 import com.daniel.JoyRent.about.widget.AboutFragment;
 import com.daniel.JoyRent.login.Login;
@@ -21,7 +23,7 @@ import com.daniel.JoyRent.login.fakeNoLoginfragment;
 import com.daniel.JoyRent.main.presenter.MainPresenter;
 import com.daniel.JoyRent.main.presenter.MainPresenterImpl;
 import com.daniel.JoyRent.main.view.MainView;
-import com.lauren.simplenews.R;
+
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnTabReselectListener;
@@ -100,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
                 if (newTabId == R.id.tab_nearby) {
                     // 已经选择了这个标签，又点击一次。即重选。
                     Intent intent = new Intent();
-                    intent.setClass(MainActivity.this,RentalHouses.class);
+                    intent.setClass(MainActivity.this, MapMain.class);
                     startActivity(intent);
                     return true;
                     // nearby.removeBadge();

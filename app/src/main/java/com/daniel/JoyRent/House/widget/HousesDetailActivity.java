@@ -11,9 +11,10 @@ import android.widget.ProgressBar;
 import com.daniel.JoyRent.House.presenter.HousesDetailPresenter;
 import com.daniel.JoyRent.House.presenter.HousesDetailPresenterImpl;
 import com.daniel.JoyRent.House.view.HousesDetailView;
+import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.beans.HousesBean;
 import com.daniel.JoyRent.utils.ImageLoaderUtils;
-import com.lauren.simplenews.R;
+
 
 import org.sufficientlysecure.htmltextview.HtmlTextView;
 

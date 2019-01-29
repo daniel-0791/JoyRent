@@ -20,10 +20,11 @@ import com.daniel.JoyRent.House.HousesAdapter;
 import com.daniel.JoyRent.House.presenter.HousesPresenter;
 import com.daniel.JoyRent.House.presenter.HousesPresenterImpl;
 import com.daniel.JoyRent.House.view.HousesView;
+import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.beans.HousesBean;
 import com.daniel.JoyRent.commons.Urls;
 import com.daniel.JoyRent.utils.LogUtils;
-import com.lauren.simplenews.R;
+
 import com.roughike.bottombar.BottomBar;
 
 import java.util.ArrayList;

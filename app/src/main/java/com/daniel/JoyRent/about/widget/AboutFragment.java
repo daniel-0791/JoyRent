@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.lauren.simplenews.R;
+import com.daniel.JoyRent.R;
 
 
 public class AboutFragment extends Fragment {

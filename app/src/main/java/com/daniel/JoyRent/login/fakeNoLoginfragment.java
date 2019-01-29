@@ -12,10 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.daniel.JoyRent.Image_UpLoad.TakePhoto;
+import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.beans.PersonInfo;
 import com.daniel.JoyRent.commons.Urls;
 import com.daniel.JoyRent.utils.ImageLoaderUtils;
-import com.lauren.simplenews.R;
+
 
 import org.litepal.crud.DataSupport;
 

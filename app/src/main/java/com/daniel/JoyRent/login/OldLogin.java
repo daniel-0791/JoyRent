@@ -14,11 +14,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.beans.PersonInfo;
 import com.daniel.JoyRent.commons.Urls;
 import com.daniel.JoyRent.main.widget.MainActivity;
 import com.daniel.JoyRent.utils.HttpUtils;
-import com.lauren.simplenews.R;
+
 
 import org.litepal.crud.DataSupport;
 
