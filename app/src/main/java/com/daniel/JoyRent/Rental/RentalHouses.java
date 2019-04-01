@@ -12,16 +12,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.daniel.JoyRent.Image_UpLoad.TakePictureManager;
 import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.beans.HousesBean;
 import com.daniel.JoyRent.commons.Urls;
-import com.daniel.JoyRent.login.Login;
+import com.daniel.JoyRent.login.OldLogin;
 import com.daniel.JoyRent.utils.OkHttp3Util;
-
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -37,15 +35,13 @@ public class RentalHouses extends AppCompatActivity implements View.OnClickListe
     private Button btn_enter;
 
     private Button btn_enter2;
-    private TextView tvShow;
+
     private EditText price;
     private  EditText houseDetail;
     private  EditText Adress;
     private  String Url=Urls.Commons+"/Imagefiles/putHouse";
     private  String Url1=Urls.Commons+"/Imagefiles/uploadfile";
 
-/*    private  String Url=Urls.Commons+"/files/putHouse";
-    private  String Url1=Urls.Commons+"/files/upload";*/
     private    String jsonData;
     private Spinner spinner;
         private   String spinnerselect;
@@ -146,7 +142,7 @@ public class RentalHouses extends AppCompatActivity implements View.OnClickListe
         final String  housename = houseName.getText().toString().trim();
 
 
-        String filename=Login.IdCard;
+        String filename=OldLogin.IdCard;
 
 
 
@@ -166,23 +162,6 @@ public class RentalHouses extends AppCompatActivity implements View.OnClickListe
         housesBean.setHouseType(spinnerselectHouseType);
         jsonData=housesBean.bolwingJson1(); //这里跳出来
 
- /*       Map<String,String>  map= new HashMap<String, String>() ;
-        map.put("elevator",  spinnerselect );
-        map.put("description",houseDetail1);
-        map.put("rentPrice",price1);
-        map.put( "area",  Adress1);*/
-
-/*        OkHttp3Util.uploadFile(Url1,imageFile,filename,map, new okhttp3.Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                Log.d("aaaa","chengggong 12l ");
-            }
-        });*/
         String filename1="Jerry";
         OkHttp3Util.uploadFile1(Url1,imageFile,filename1, new okhttp3.Callback() {
             @Override
@@ -205,7 +184,6 @@ public class RentalHouses extends AppCompatActivity implements View.OnClickListe
 
                 try {
 
-
                     OkHttp3Util.doPostJson(Url,jsonData, new okhttp3.Callback() {
                         @Override
                         public void onFailure(Call call, IOException e) {
@@ -215,10 +193,10 @@ public class RentalHouses extends AppCompatActivity implements View.OnClickListe
                         @Override
                         public void onResponse(Call call, Response response) throws IOException {
                             Log.d("aaaa","chengggong l ");
-
+                            Toast.makeText(RentalHouses.this, "上传成功", Toast.LENGTH_SHORT).show();
                         }
                     });
-                    Toast.makeText(RentalHouses.this, "上传成功", Toast.LENGTH_SHORT).show();
+
                     /**
                      *
                      */

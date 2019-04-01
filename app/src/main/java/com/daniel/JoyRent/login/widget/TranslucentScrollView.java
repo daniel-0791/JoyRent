@@ -19,10 +19,6 @@ import com.daniel.JoyRent.login.utils.SizeUtils;
 
 
 
-/**
- * Created by 晖仔(Milo) on 2017/2/13.
- * email:303767416@qq.com
- */
 
 public class TranslucentScrollView extends ScrollView {
 

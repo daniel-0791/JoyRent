@@ -10,7 +10,16 @@ public class HousesBean  extends DataSupport implements Serializable {
 
     private int houseID;
     private String houseName;
-    private int memberID;
+    private int member_ID;
+
+    public int getMember_ID() {
+        return member_ID;
+    }
+
+    public void setMember_ID(int member_ID) {
+        this.member_ID = member_ID;
+    }
+
     private String rentPrice;
     private String checkInDate;
     private String houseType;
@@ -77,13 +86,7 @@ public class HousesBean  extends DataSupport implements Serializable {
         this.houseID = houseID;
     }
 
-    public int getMemberID() {
-        return memberID;
-    }
 
-    public void setMemberID(int memberID) {
-        this.memberID = memberID;
-    }
 
     public String getHouseName() {
         return houseName;

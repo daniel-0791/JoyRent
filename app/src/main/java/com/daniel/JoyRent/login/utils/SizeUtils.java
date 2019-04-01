@@ -2,11 +2,7 @@ package com.daniel.JoyRent.login.utils;
 
 import android.content.Context;
 
-/**
- * Created by yanjunhui
- * on 2016/9/29.
- * email:303767416@qq.com
- */
+
 public class SizeUtils {
 
     public static int dip2px(Context context, float dpValue) {

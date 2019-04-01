@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.daniel.JoyRent.login.modifiedData" >
+
+    <TextView
+        android:id="@+id/textview2"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="#e0e3f4"
+        android:gravity="center"
+        android:text="添加/修改个人信息"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/fanhui_data"
+        android:onClick="fanhui_data"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignBottom="@+id/textview2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/fanhui" />
+
+    <EditText
+        android:id="@+id/sex"
+        android:layout_width="290dp"
+        android:layout_height="45dp"
+        android:layout_alignLeft="@+id/telnumber"
+        android:layout_below="@+id/telnumber"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/registerbutton_shape"
+        android:drawableLeft="@drawable/password"
+        android:ems="10"
+        android:hint="性别"
+        android:inputType="textPassword" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/nickname"
+        android:layout_width="290dp"
+        android:layout_height="45dp"
+        android:layout_alignLeft="@+id/sex"
+        android:layout_below="@+id/sex"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/registerbutton_shape"
+        android:drawableLeft="@drawable/password"
+        android:ems="10"
+        android:hint="昵称"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/tv_email"
+        android:layout_width="291dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nickname"
+        android:layout_alignLeft="@+id/nickname"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/registerbutton_shape"
+        android:drawableLeft="@drawable/yanzhengma"
+        android:ems="10"
+        android:hint="请输入邮箱"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/telnumber"
+        android:layout_width="290dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/textview2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/registerbutton_shape"
+        android:drawableLeft="@drawable/tel"
+        android:ems="10"
+        android:hint="添加或修改您的手机号"
+        android:inputType="phone" />
+
+    <Button
+        android:background="@drawable/shape_green_content_normal"
+        android:id="@+id/btn_submit"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/tv_email"
+        android:layout_below="@+id/tv_email"
+        android:layout_marginTop="34dp"
+        android:textColor="@color/white"
+        android:text="确定" />
+
+</RelativeLayout>

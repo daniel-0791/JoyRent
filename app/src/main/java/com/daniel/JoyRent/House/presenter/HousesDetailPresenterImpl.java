@@ -15,10 +15,10 @@ public class HousesDetailPresenterImpl implements HousesDetailPresenter, OnLoadH
     private Context mContent;
     private HousesDetailView mHousesDetailView;
     private HousesModel mHousesModel;
-/*
+    /*
 
-HousesDetailActivity里
- */
+    HousesDetailActivity里
+     */
     public HousesDetailPresenterImpl(Context mContent, HousesDetailView mHousesDetailView) {
         this.mContent = mContent;
         this.mHousesDetailView = mHousesDetailView;
@@ -27,7 +27,7 @@ HousesDetailActivity里
 
     @Override
     public void loadHousesDetail(final String docId) {
-       // mHousesDetailView.showProgress();
+        // mHousesDetailView.showProgress();
         mHousesModel.loadHousesDetail(docId, this);
     }
 
@@ -37,7 +37,7 @@ HousesDetailActivity里
 
 
         if (HousesDetailBean != null) {
-         //
+            //
         }
         mHousesDetailView.hideProgress();
     }

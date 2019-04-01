@@ -49,7 +49,7 @@
                             android:layout_height="105dp"
                             android:layout_centerInParent="true"
                             android:scaleType="fitXY"
-                            android:src="@mipmap/dft_avatar" />
+                            android:src="@drawable/first" />
                     </RelativeLayout>
 
                     <LinearLayout
@@ -59,15 +59,6 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="15dp"
                         android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tv_name"
-                            style="@style/text_white"
-                            android:layout_gravity="center_horizontal"
-                            android:text="点击更换头像"
-
-                            android:textColor="@color/white"
-                            android:textSize="20sp" />
 
                         <TextView
                             android:id="@+id/tv_email"
@@ -89,7 +80,7 @@
                 android:paddingTop="8dp">
 
                 <LinearLayout
-                    android:id="@+id/lay_car"
+                    android:id="@+id/lay_info"
                     android:layout_width="0.0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
@@ -105,11 +96,11 @@
                     <TextView
                         style="@style/text_black"
                         android:layout_marginTop="5dp"
-                        android:text="xxxx" />
+                        android:text="个人信息" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/lay_history"
+                    android:id="@+id/lay_order"
                     android:layout_width="0.0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
@@ -127,7 +118,7 @@
                         style="@style/text_black"
                         android:layout_width="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="xxxx" />
+                        android:text="协议合同" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -274,21 +265,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="17dp"
                         android:layout_weight="1"
-                        android:text="手机号" />
-
-                    <TextView
-                        android:id="@+id/detail_phone"
-                        style="@style/text_black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="190dp"
-                        android:layout_weight="0.11"
-                        android:text="请登录"
-                        android:textColor="@color/gray_dft"
-                        android:textSize="13sp"
-
-                        tools:text="   " />
+                        android:text="我的消息" />
 
                 </LinearLayout>
 
@@ -317,21 +294,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="17dp"
                         android:layout_weight="1"
-                        android:text="身份证号" />
-
-                    <TextView
-                        android:id="@+id/numberCard"
-                        style="@style/text_black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="100dp"
-                        android:layout_weight="0.11"
-                        android:text="请登录"
-                        android:textColor="@color/gray_dft"
-                        android:textSize="13sp"
-
-                        tools:text="  " />
+                        android:text="评价与投诉" />
 
 
                 </LinearLayout>
@@ -363,20 +326,6 @@
                         android:layout_marginLeft="17dp"
                         android:layout_weight="1"
                         android:text="邮箱" />
-
-                    <TextView
-                        android:id="@+id/tv_email1"
-                        style="@style/text_black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="100dp"
-                        android:layout_weight="0.11"
-                        android:text="请登录"
-                        android:textColor="@color/gray_dft"
-                        android:textSize="13sp"
-
-                        tools:text="  " />
 
 
                 </LinearLayout>

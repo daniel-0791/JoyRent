@@ -1,15 +1,15 @@
 package com.daniel.JoyRent.House.presenter;
 
 
-import com.daniel.JoyRent.House.model.HousesModel;
-import com.daniel.JoyRent.House.model.HousesModelImpl;
-import com.daniel.JoyRent.House.model.OnLoadHousesListListener;
-import com.daniel.JoyRent.House.view.HousesView;
-import com.daniel.JoyRent.beans.HousesBean;
-import com.daniel.JoyRent.commons.Urls;
-import com.daniel.JoyRent.utils.LogUtils;
+        import com.daniel.JoyRent.House.model.HousesModel;
+        import com.daniel.JoyRent.House.model.HousesModelImpl;
+        import com.daniel.JoyRent.House.model.OnLoadHousesListListener;
+        import com.daniel.JoyRent.House.view.HousesView;
+        import com.daniel.JoyRent.beans.HousesBean;
+        import com.daniel.JoyRent.commons.Urls;
+        import com.daniel.JoyRent.utils.LogUtils;
 
-import java.util.List;
+        import java.util.List;
 
 
 public class HousesPresenterImpl implements HousesPresenter, OnLoadHousesListListener {
@@ -31,7 +31,7 @@ public class HousesPresenterImpl implements HousesPresenter, OnLoadHousesListLis
     @Override
     public void loadHouses(final int type, final int pageIndex) {
 
-      //  String url = getUrl(type, pageIndex);//0，3
+        //  String url = getUrl(type, pageIndex);//0，3
         String url =  Urls.HOUSEStest;
         LogUtils.d(TAG, url);
         //只有第一页的或者刷新的时候才显示刷新进度条

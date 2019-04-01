@@ -55,17 +55,83 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <TextView
+
+        style="@style/text_black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+     android:gravity="center"
+        android:layout_weight="6"
+
+        android:text="详情:" />
+    <org.sufficientlysecure.htmltextview.HtmlTextView
+        android:id="@+id/htHousesContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp"
+        android:layout_weight="1"
+        android:textAppearance="@android:style/TextAppearance.Medium" />
+
+
+</LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/imageText"
+                style="@style/text_black"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="6"
+
+                android:text="租金:" />
             <org.sufficientlysecure.htmltextview.HtmlTextView
-                android:id="@+id/htHousesContent"
+                android:id="@+id/htHousesdetailmoney"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp"
+                android:layout_weight="1"
+                android:textAppearance="@android:style/TextAppearance.Medium" />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:gravity="center"
+                    style="@style/text_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="6"
+
+                    android:text="地点:" />
+            <org.sufficientlysecure.htmltextview.HtmlTextView
+                android:id="@+id/htHousesdetailadress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp"
+                android:layout_weight="1"
+                android:textAppearance="@android:style/TextAppearance.Medium" />
+            </LinearLayout>
+            <org.sufficientlysecure.htmltextview.HtmlTextView
+                android:id="@+id/htHousesdetailWay"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="12dp"
                 android:textAppearance="@android:style/TextAppearance.Medium" />
 
+
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -73,16 +139,30 @@
         android:gravity="center|bottom">
 
         <Button
-            android:id="@+id/btn_enter"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
             android:background="@drawable/shape_green_content_normal"
+            android:onClick="signContract"
+            android:text="联系TA"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/signContract"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_green_content_normal"
+            android:onClick="signContract"
             android:text="立即签约"
             android:textColor="@color/white"
-            android:textSize="18dp"/>
+            android:textSize="18dp" />
+
+
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

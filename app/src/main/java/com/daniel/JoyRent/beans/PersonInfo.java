@@ -4,12 +4,16 @@ package com.daniel.JoyRent.beans;
 import org.litepal.crud.DataSupport;
 
 public class PersonInfo extends DataSupport {
-    public String regFlag=null;
-    public String regMsg=null;
+    public String regFlag = null;
+    public String regMsg = null;
     private int member_ID;
-    private String member_name=null;
+    private String member_name = null;
     private String member_password;
     private String member_image;
+    private String member_idcard;
+    private String member_phone;
+    private String member_email;
+    private String member_sex;
 
     public String getMember_image() {
         return member_image;
@@ -19,7 +23,6 @@ public class PersonInfo extends DataSupport {
         this.member_image = member_image;
     }
 
-    private String member_sex;
 
     public String getMember_email() {
         return member_email;
@@ -29,9 +32,7 @@ public class PersonInfo extends DataSupport {
         this.member_email = member_email;
     }
 
-    private String member_idcard;
-    private String member_phone;
-    private String member_email;
+
     public int getMember_ID() {
         return member_ID;
     }
@@ -99,10 +100,23 @@ public class PersonInfo extends DataSupport {
 
     @Override
     public String toString() {
-        return "JsonBean{" +
-                "regMsg='" + regMsg + '\'' +
-                ", regFlag='" + regFlag + '\'' +
 
-                '}';
+
+/*
+        return "PersonInfo{" +
+                "\"member_ID\"" + member_ID +
+                ", member_name='" + member_name + '\'' +
+                ", member_password='" + member_password + '\'' +
+                ", member_image='" + member_image + '\'' +
+                ", member_idcard='" + member_idcard + '\'' +
+                ", member_phone='" + member_phone + '\'' +
+                ", member_email='" + member_email + '\'' +
+                ", member_sex='" + member_sex + '\'' +
+                '}';*/
+
+        return " {\"member_sex\":\"" + member_sex + "\"," + "\"member_name\":\""
+                + member_name + "\"," + "\"member_ID\":\""
+                + member_ID + "\","+ "\"member_phone\":\"" + member_phone + "\","
+                + "\"member_email\":\"" + member_email + "\"" + "  }";
     }
 }

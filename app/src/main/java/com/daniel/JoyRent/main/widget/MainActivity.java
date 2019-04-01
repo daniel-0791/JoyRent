@@ -11,21 +11,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.daniel.JoyRent.House.widget.HousesFragment;
 import com.daniel.JoyRent.House.widget.nav_secondFrament;
-import com.daniel.JoyRent.Map.MapMain;
+import com.daniel.JoyRent.Map.Referral;
 import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.Rental.RentalHouses;
 import com.daniel.JoyRent.about.widget.AboutFragment;
-import com.daniel.JoyRent.login.Login;
-import com.daniel.JoyRent.login.fakeNoLoginfragment;
+import com.daniel.JoyRent.login.MyIndex;
+import com.daniel.JoyRent.login.OldLogin;
 import com.daniel.JoyRent.main.presenter.MainPresenter;
 import com.daniel.JoyRent.main.presenter.MainPresenterImpl;
 import com.daniel.JoyRent.main.view.MainView;
-
 import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnTabReselectListener;
 import com.roughike.bottombar.OnTabSelectListener;
 import com.roughike.bottombar.TabSelectionInterceptor;
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
     /**
      * 导航栏的 activity
      */
-    private BottomBarTab nearby;
+
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private Toolbar mToolbar;
@@ -71,11 +70,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
-             /*   if (tabId == R.id.tab_nearby) {
-                    // 选择指定 id 的标签
-                    nearby = bottomBar.getTabWithId(R.id.tab_nearby);
-                    nearby.setBadgeCount(5);
-                }*/
+
             }
         });
 
@@ -96,13 +91,13 @@ public class MainActivity extends AppCompatActivity implements MainView {
                 // 点击无效
                 if (newTabId == R.id.tab_mine ) {
                     // 返回 true 。代表：这里我处理了，你不用管了。
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new fakeNoLoginfragment()).commit();//源生API里的切换其他页面，
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new MyIndex()).commit();//源生API里的切换其他页面，
                     return true;
                 }
                 if (newTabId == R.id.tab_nearby) {
                     // 已经选择了这个标签，又点击一次。即重选。
                     Intent intent = new Intent();
-                    intent.setClass(MainActivity.this, MapMain.class);
+                    intent.setClass(MainActivity.this, Referral.class);
                     startActivity(intent);
                     return true;
                     // nearby.removeBadge();
@@ -119,26 +114,30 @@ public class MainActivity extends AppCompatActivity implements MainView {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-   /*     menu.add(Menu.NONE,  Menu.FIRST+1, 0, "设置").setIcon(R.drawable.biz_plugin_weather_baoyu);
-        menu.add(Menu.NONE,  Menu.FIRST+2, 0, "设置").setIcon(R.drawable.biz_plugin_weather_baoyu);*/
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+
         if (id == R.id.action_settings) {
             return true;
         }
         if (id == R.id.put) {
-            Intent intent = new Intent();
-            intent.setClass(MainActivity.this,RentalHouses.class);
-            startActivity(intent);
+            if(OldLogin.userId!=0)
+            {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,RentalHouses.class);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(MainActivity.this, "请先登录再进行发布", Toast.LENGTH_SHORT).show();
+
+            }
 
             return true;
         }if (id == R.id.action_settings) {
@@ -182,20 +181,24 @@ public class MainActivity extends AppCompatActivity implements MainView {
     }
 
     public void UserInfo1(View view) {
-      //  startActivity(new Intent(this,com.daniel.JoyRent.login.UserInfo.class));
+
         Intent intent = new Intent();
-        intent.setClass(MainActivity.this,Login.class);
+        intent.setClass(MainActivity.this,OldLogin.class);
         startActivity(intent);
     }
     public void rentalHouse(View view) {
-        //  startActivity(new Intent(this,com.daniel.JoyRent.login.UserInfo.class));
-        Intent intent = new Intent();
-        intent.setClass(MainActivity.this,RentalHouses.class);
-        startActivity(intent);
 
+        if(OldLogin.userId!=0)
+        {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this,RentalHouses.class);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(MainActivity.this, "请先登录再进行发布", Toast.LENGTH_SHORT).show();
 
-     /*   Intent intent = new Intent(getActivity(), RentalHouses.class);
-        startActivity(intent);*/
+        }
+
     }
 
 

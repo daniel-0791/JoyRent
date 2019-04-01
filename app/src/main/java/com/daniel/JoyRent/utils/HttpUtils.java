@@ -1,6 +1,5 @@
 package com.daniel.JoyRent.utils;
 
-
 import android.util.Log;
 
 import com.daniel.JoyRent.beans.PersonInfo;
@@ -22,10 +21,8 @@ public class HttpUtils {
             = MediaType.parse("application/json; charset=utf-8");
     private static final String TAG ="httputils" ;
     public PersonInfo login(String url, String username, String password) throws IOException {
-        //把请求的内容字符串转换为json
-        //  RequestBody body = RequestBody.create(JSON, json);
-        //RequestBody formBody = new FormEncodingBuilder()
-        String regFlag;
+
+
 
         String regMsg = null;
         RequestBody requestBody=new FormBody.Builder()
@@ -39,19 +36,9 @@ public class HttpUtils {
                 .build();
 
         Response response = client.newCall(request).execute();
-        //  System.out.println(response.body().string());
+
         String result = response.body().string();
 
-
-        Gson gson = new Gson();
-
-       // PersonInfo jsonBean = gson.fromJson(result, PersonInfo.class);
-
-
-
-
-    //    PersonInfo jsonBean = gson.fromJson(result, PersonInfo.class);
-     //   PersonInfo  jsonBean1=jsonBean;
 
 
        List<PersonInfo> jsonBeanlist =GsonUtil.jsonToList(result, PersonInfo.class);//   加.class
@@ -102,6 +89,44 @@ public class HttpUtils {
 
     }
 
+    public PersonInfo PhoneVerify(String url, String phone) throws IOException {
 
+
+        RequestBody requestBody=new FormBody.Builder()
+                .add("member_phone", phone)
+                .build();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build();
+
+        Response response = client.newCall(request).execute();
+
+        String result = response.body().string();
+
+
+
+        List<PersonInfo> jsonBeanlist =GsonUtil.jsonToList(result, PersonInfo.class);//   加.class
+
+
+        if (jsonBeanlist.size()!=0)
+        {
+            PersonInfo jsonBean=jsonBeanlist.get(0);
+            PersonInfo  login=jsonBean;
+            Log.d(TAG, "user:" + jsonBean);
+            return jsonBean;
+
+
+        }
+        else {
+            PersonInfo  jsonBean1 = null;
+
+            return  jsonBean1;
+        }
+
+
+
+    }
 
 }

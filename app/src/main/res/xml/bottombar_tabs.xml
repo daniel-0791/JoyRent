@@ -9,7 +9,7 @@
         />
     <tab
         id="@+id/tab_nearby"
-        title="发布"
+        title="推荐"
         icon="@mipmap/ic_nearby"
         barColorWhenSelected="#FFFFFF"
         />

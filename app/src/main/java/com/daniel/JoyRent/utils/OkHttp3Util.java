@@ -6,14 +6,12 @@ import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
 import okhttp3.Cache;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -25,14 +23,11 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-/**
- * Created by Dash on 2017/12/8.
- */
 public class OkHttp3Util {
 
 
     /**
-     * 懒汉 安全 加同步
+     * 安全 加同步
      * 1.私有的静态成员变量 只声明不创建
      * 2.私有的构造方法
      * 3.提供返回实例的静态方法

@@ -9,41 +9,39 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.daniel.JoyRent.Image_UpLoad.TakePhoto;
 import com.daniel.JoyRent.R;
+import com.daniel.JoyRent.Rental.House_order;
 import com.daniel.JoyRent.beans.PersonInfo;
 import com.daniel.JoyRent.commons.Urls;
 import com.daniel.JoyRent.utils.ImageLoaderUtils;
 
-
-import org.litepal.crud.DataSupport;
-
-import java.util.List;
-
 /**
  * A simple {@link Fragment} subclass.
  */
-public class fakeNoLoginfragment extends Fragment implements View.OnClickListener {
+public class MyIndex extends Fragment implements View.OnClickListener {
     private TextView detailName;
     private TextView detail_name;
     private TextView detailSex;
     private TextView detailEmail;
     private TextView detail_phone;
     private TextView tv_email1;
-
+    private LinearLayout lay_info;
+    private LinearLayout lay_order;
     private TextView numberCard;
     private ImageView imageView;
     private String url = Urls.Commons+"/member/getOneMember";
-    public fakeNoLoginfragment() {
+    public MyIndex() {
         // Required empty public constructor
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ImageView imageView=getActivity().findViewById(R.id.img_avatar);
+        ImageView imageView=getActivity().findViewById(R.id.img_avatar); //进入上传图片
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,38 +49,43 @@ public class fakeNoLoginfragment extends Fragment implements View.OnClickListene
 
             }
         });
+        lay_info=(LinearLayout)getActivity().findViewById(R.id.lay_info);  //进入个人信息页面
+        lay_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), PersonalInfo.class));
+
+            }
+        });
+
+
+
+        lay_order=(LinearLayout)getActivity().findViewById(R.id.lay_order);  //进入个人订单
+        lay_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), House_order.class));
+
+            }
+        });
         initView();
-        String id=String.valueOf(Login.userId);
+
+/*
+        String id=String.valueOf(OldLogin.userId);   //我的界面上的信息
         List<PersonInfo> personInfo1= DataSupport.select("*")
                 .where("member_ID = ?",id)
                 .find(PersonInfo.class);
 
         int number=personInfo1.size();
-
-
-        //  Log.d(TAG,String.valueOf(ii));
-
         if(number==0)
         {
-            detailName.setText("请登录");
-            detail_name.setText("请登录");
-            detailSex.setText("请登录");
+
+            detailEmail.setText("你好,请先登录");
         }
         else{
             PersonInfo personInfoOne=personInfo1.get(0);
-
-            //显示出来
-      /*      HttpUtils httpUtils = new HttpUtils();
-            try {
-          *//*      String user=Login.user;
-                        String pas=Login.pas;
-                PersonInfo result = httpUtils.login(url,user ,pas);
-                showPersonInfo(result);*//*
-            } catch (IOException e) {
-                e.printStackTrace();
-            }*/
           showPersonInfo(personInfoOne);
-        }
+        }*/
     }
 
     @Override
@@ -100,6 +103,9 @@ public class fakeNoLoginfragment extends Fragment implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.img_avatar:
+                break;
+
+            case R.id.lay_info:
                 break;
         }
     }
@@ -121,7 +127,7 @@ public class fakeNoLoginfragment extends Fragment implements View.OnClickListene
         detailName.setText(name);
         detail_name.setText(name);
         detailSex.setText(sex);
-        detailEmail.setText(email);
+        detailEmail.setText("你好,"+name);
         detail_phone.setText(phone1);
         numberCard.setText(idcard);
         tv_email1.setText(email);
@@ -133,10 +139,10 @@ public class fakeNoLoginfragment extends Fragment implements View.OnClickListene
         detail_name= (TextView) getActivity().findViewById(R.id.detail_name);
         detailEmail= (TextView) getActivity().findViewById(R.id.tv_email);
         detailSex= (TextView)getActivity(). findViewById(R.id.detail_sex);
-        detail_phone=(TextView)getActivity(). findViewById(R.id.detail_phone);
-        numberCard=(TextView)getActivity(). findViewById(R.id.numberCard);
+
+
         imageView= (ImageView) getActivity().findViewById(R.id.img_avatar); //换照片
 
-        tv_email1= (TextView)getActivity(). findViewById(R.id.tv_email1);
+
     }
 }
