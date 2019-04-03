@@ -32,6 +32,8 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/alterPhoto"
+        android:onClick="alterPhoto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -179,6 +181,8 @@ android:layout_weight="1"
         android:layout_marginTop="10dp"
         android:background="#808080" />
     <LinearLayout
+        android:id="@+id/ChangeDetail"
+        android:onClick="ChangeDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"  android:layout_marginTop="20dp">
@@ -191,11 +195,18 @@ android:layout_weight="1"
             android:layout_weight="5"
             android:layout_gravity="center_vertical"
             android:text="修改资料" />
+        <TextView
+            android:id="@+id/peisonal_phone213"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="点击修改" />
 
 
         <ImageView
-            android:id="@+id/ChangeDetail"
-            android:onClick="ChangeDetail"
+
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 

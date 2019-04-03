@@ -5,49 +5,59 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:text="拍照" />
+
+
+        <Button
+            android:id="@+id/btAlbum"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:text="相册" />
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/upImageId"
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="上传图片"
+        android:layout_marginTop="50dp"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btn_pick"
+        android:layout_width="58dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:text="选择城市"
+        android:textSize="16sp" />
+
     <ImageView
         android:id="@+id/ivShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/tvShow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/app_name"
-        android:textSize="@dimen/activity_horizontal_margin" />
-
-    <Button
-        android:id="@+id/btCamera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="拍照" />
-
-
-    <Button
-        android:id="@+id/btAlbum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="相册" />
-
-    <Button
-        android:id="@+id/upImageId"
-        android:layout_width="153dp"
-        android:layout_height="wrap_content"
-        android:text="上传图片" />
-
-    <Button
-        android:id="@+id/btn_pick"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/colorPrimary"
-        android:text="选择城市"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"/>
 
 </LinearLayout>
 

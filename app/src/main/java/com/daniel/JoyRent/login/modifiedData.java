@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.daniel.JoyRent.R;
@@ -27,6 +29,8 @@ public class modifiedData extends AppCompatActivity  implements View.OnClickList
     private EditText telnumber;
     private EditText tv_email;
     private Button btn_submit;
+    private Spinner spinner;
+    private   String spinnerselect;
     private    String jsonData;
     public static int flag=0;
     @Override
@@ -47,10 +51,29 @@ public class modifiedData extends AppCompatActivity  implements View.OnClickList
 
         nickname= (EditText) findViewById(R.id.nickname);
         telnumber= (EditText) findViewById(R.id.telnumber);
-        sex= (EditText) findViewById(R.id.sex);
+
         tv_email= (EditText) findViewById(R.id.tv_email);
         btn_submit = (Button) findViewById(R.id.btn_submit);
         btn_submit.setOnClickListener(this);  //一定要初始化，哪怕onclick里不是btn_enter
+        spinner= (Spinner) findViewById(R.id.sex);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+
+                //拿到被选择项的值
+                spinnerselect = (String) spinner.getSelectedItem();
+                //把该值传给 TextView
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+                spinnerselect="男";
+            }
+        });
     }
 
     @Override
@@ -69,7 +92,7 @@ public class modifiedData extends AppCompatActivity  implements View.OnClickList
 
         final String   nickname1 = nickname.getText().toString().trim();
         final String  telnumber1 = telnumber.getText().toString().trim();
-        final String  sex1 = sex.getText().toString().trim();
+        final String  sex1 =spinnerselect;
         final String  tv_email1 = tv_email.getText().toString().trim();
         final int  ID = OldLogin.userId;
 

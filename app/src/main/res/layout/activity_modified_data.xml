@@ -24,21 +24,9 @@
         android:layout_alignParentTop="true"
         android:src="@drawable/fanhui" />
 
-    <EditText
-        android:id="@+id/sex"
-        android:layout_width="290dp"
-        android:layout_height="45dp"
-        android:layout_alignLeft="@+id/telnumber"
-        android:layout_below="@+id/telnumber"
-        android:layout_marginTop="18dp"
-        android:background="@drawable/registerbutton_shape"
-        android:drawableLeft="@drawable/password"
-        android:ems="10"
-        android:hint="性别"
-        android:inputType="textPassword" >
 
         <requestFocus />
-    </EditText>
+
 
     <EditText
         android:id="@+id/nickname"
@@ -89,5 +77,18 @@
         android:layout_marginTop="34dp"
         android:textColor="@color/white"
         android:text="确定" />
+
+    <Spinner
+        android:id="@+id/sex"
+        android:layout_width="290dp"
+        android:layout_height="45dp"
+        android:layout_alignLeft="@+id/telnumber"
+        android:layout_below="@+id/telnumber"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/registerbutton_shape"
+        android:drawableLeft="@drawable/password"
+
+        android:entries="@array/sex"
+        />
 
 </RelativeLayout>

@@ -2,9 +2,7 @@ package com.daniel.JoyRent.login;
 
 import android.content.Context;
 import android.content.Intent;
-
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
@@ -21,13 +19,11 @@ import com.daniel.JoyRent.commons.Urls;
 import com.daniel.JoyRent.main.widget.MainActivity;
 import com.daniel.JoyRent.utils.HttpUtils;
 
-
 import org.litepal.crud.DataSupport;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-
 
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
@@ -38,17 +34,16 @@ public class OldLogin extends AppCompatActivity  implements View.OnClickListener
     private static final String TAG ="OldLogin" ;
     public static final MediaType JSON
             = MediaType.parse("application/json; charset=utf-8");
-    private CustomVideoView videoview;
+
     private Button btn_enter;
-    private FloatingActionButton fab;
-    private  Button bt_go;
+
     private EditText username;
     private EditText password1;
     private Context context;
     private TextView thirdLogin;
     public static int userId=0;  //全局
     public static String IdCard="1111";  //全局
-    // LoginCheck jsonBean=null;
+
     private String url = Urls.Commons+"/member/getOneMember";
 private String url2 = Urls.Commons+"/member/getOneMemberByPhone";
     public static String user;

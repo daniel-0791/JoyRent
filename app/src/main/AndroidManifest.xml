@@ -87,7 +87,7 @@
         <activity android:name=".login.PersonalInfo" />
         <activity android:name=".login.modifiedData" />
         <activity android:name=".Rental.House_order" />
-        <activity android:name=".Map.Referral"></activity>
+        <activity android:name=".Map.Referral" />
     </application>
 
 </manifest>

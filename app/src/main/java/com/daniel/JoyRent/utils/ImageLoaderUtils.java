@@ -4,6 +4,7 @@ import android.content.Context;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.daniel.JoyRent.R;
 
 
@@ -22,6 +23,8 @@ public class ImageLoaderUtils {
             throw new IllegalArgumentException("argument error");
         }
         Glide.with(context).load(url).placeholder(R.drawable.ic_image_loading)
+                .skipMemoryCache(true) // 不使用内存缓存
+                .diskCacheStrategy(DiskCacheStrategy.NONE) // 不使用磁盘缓存
                 .error(R.drawable.ic_image_loadfail).crossFade().into(imageView);
     }
 

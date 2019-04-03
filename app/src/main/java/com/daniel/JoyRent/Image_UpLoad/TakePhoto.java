@@ -10,12 +10,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.commons.Urls;
 import com.daniel.JoyRent.login.OldLogin;
+import com.daniel.JoyRent.main.widget.MainActivity;
 import com.daniel.JoyRent.utils.OkHttp3Util;
 import com.squareup.picasso.Picasso;
 import com.zaaach.citypicker.CityPicker;
@@ -36,7 +36,7 @@ public class TakePhoto extends AppCompatActivity implements View.OnClickListener
 
     private ImageView ivShow;
 
-    private TextView tvShow;
+
 
     private TakePictureManager takePictureManager;
 
@@ -99,7 +99,7 @@ public class TakePhoto extends AppCompatActivity implements View.OnClickListener
         btCamera.setOnClickListener(this);
         Button btAlbum = (Button) findViewById(R.id.btAlbum);
         btAlbum.setOnClickListener(this);
-        tvShow = (TextView) findViewById(R.id.tvShow);
+
         Button upImageId = (Button) findViewById(R.id.upImageId);
         upImageId.setOnClickListener(this);
 
@@ -123,7 +123,7 @@ public class TakePhoto extends AppCompatActivity implements View.OnClickListener
                     @Override
                     public void successful(boolean isTailor, File outFile, Uri filePath) {
                         imageFile=outFile;
-                        tvShow.setText(filePath.getPath());
+
                         fileImage=filePath.getPath();
                         Picasso.with(TakePhoto.this).load(outFile).error(R.mipmap.ic_launcher).into(ivShow);
                     }
@@ -144,7 +144,8 @@ public class TakePhoto extends AppCompatActivity implements View.OnClickListener
                     @Override
                     public void successful(boolean isTailor, File outFile, Uri filePath) {
                         imageFile=outFile;
-                        tvShow.setText(filePath.getPath());
+
+
                         fileImage=filePath.getPath();
                         Picasso.with(TakePhoto.this).load(outFile).error(R.mipmap.ic_launcher).into(ivShow);
                     }
@@ -157,9 +158,13 @@ public class TakePhoto extends AppCompatActivity implements View.OnClickListener
                 });
 
                 break;
+            /**
+             * 发送照片
+             */
             case R.id.upImageId:
               String id=String.valueOf(OldLogin.userId);
                 String filename=OldLogin.IdCard;
+
                 OkHttp3Util.uploadFile1(Url,imageFile,id, new okhttp3.Callback() {
                     @Override
                     public void onFailure(Call call, IOException e) {
@@ -170,10 +175,25 @@ public class TakePhoto extends AppCompatActivity implements View.OnClickListener
                     public void onResponse(Call call, Response response) throws IOException {
 
                         String responseData=response.body().string();
+                        runOnUiThread(new Runnable(){
 
+                            @Override
+                            public void run() {
+                                //更新UI
+                                Toast.makeText(TakePhoto.this, "上传成功", Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(TakePhoto.this, MainActivity.class);
+                                intent.putExtra("id",1);
+                                startActivity(intent);
+
+                            }
+
+                        });
                     }
                 });
-                Toast.makeText(TakePhoto.this, "上传成功", Toast.LENGTH_SHORT).show();
+
+
+
                 break;
         }
     }

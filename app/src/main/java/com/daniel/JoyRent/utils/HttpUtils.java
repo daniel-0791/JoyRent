@@ -62,6 +62,50 @@ public class HttpUtils {
 
 
     }
+
+    public PersonInfo FindID(String url, String ID) throws IOException {
+
+
+
+
+
+        RequestBody requestBody=new FormBody.Builder()
+                .add("member_ID", ID)
+                .build();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build();
+
+        Response response = client.newCall(request).execute();
+
+        String result = response.body().string();
+
+
+
+        List<PersonInfo> jsonBeanlist =GsonUtil.jsonToList(result, PersonInfo.class);//   加.class
+
+
+        if (jsonBeanlist.size()!=0)
+        {
+            PersonInfo jsonBean=jsonBeanlist.get(0);
+            PersonInfo  login=jsonBean;
+            Log.d(TAG, "user:" + jsonBean);
+            return jsonBean;
+
+
+        }
+        else {
+            PersonInfo  jsonBean1 = null;
+
+            return  jsonBean1;
+        }
+
+
+
+
+    }
     public PersonInfo register(String url, String username, String password) throws IOException {
 
 

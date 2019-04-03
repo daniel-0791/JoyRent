@@ -107,6 +107,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
         });
 
 
+
+
     }
 
     @Override
@@ -178,6 +180,19 @@ public class MainActivity extends AppCompatActivity implements MainView {
     public void switch2About() {
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new AboutFragment()).commit();
         mToolbar.setTitle(R.string.navigation_about);
+    }
+
+    @Override
+    protected void onResume() {
+        /**
+         *从一个Activity跳转到另外一个Activity的Fragment上
+         */
+        int id = getIntent().getIntExtra("id", 0);
+        if (id == 1) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new MyIndex()).commit();//源生API里的切换其他页面，
+        }
+
+        super.onResume();
     }
 
     public void UserInfo1(View view) {

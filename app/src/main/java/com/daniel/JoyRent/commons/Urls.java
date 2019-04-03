@@ -7,7 +7,7 @@ public class Urls {
      * 房源
      */
 
-    public static final String  Commons="http://192.168.1.101:8080";
+    public static final String  Commons="http://192.168.1.102:8080";
 
     public static final String HOUSEStest = Commons+"/getManyHouses";
 
