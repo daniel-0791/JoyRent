@@ -158,6 +158,11 @@ public class HousesListFragment extends Fragment implements HousesView, SwipeRef
     /*
        List<HousesBean>   mData
      */
+
+    /**
+     * 加载列表
+     * @param HousesList
+     */
     @Override
     public void addHouses(List<HousesBean> HousesList) {
         List<HousesBean> temp;

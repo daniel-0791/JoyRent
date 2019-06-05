@@ -18,7 +18,6 @@ import com.daniel.JoyRent.Image_UpLoad.TakePictureManager;
 import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.beans.HousesBean;
 import com.daniel.JoyRent.commons.Urls;
-import com.daniel.JoyRent.login.OldLogin;
 import com.daniel.JoyRent.utils.OkHttp3Util;
 import com.squareup.picasso.Picasso;
 
@@ -104,7 +103,7 @@ public class RentalHouses extends AppCompatActivity implements View.OnClickListe
                 sendWithOkhttp();
                 break;
             case R.id.choosephoto:
-                Toast.makeText(RentalHouses.this, "来了老弟", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RentalHouses.this, "选择照片", Toast.LENGTH_SHORT).show();
                 takePictureManager = new TakePictureManager(this);
                 takePictureManager.setTailor(1, 1, 350, 350);
                 takePictureManager.startTakeWayByAlbum();
@@ -142,9 +141,11 @@ public class RentalHouses extends AppCompatActivity implements View.OnClickListe
         final String  housename = houseName.getText().toString().trim();
 
 
-        String filename=OldLogin.IdCard;
 
 
+/**
+ * 获取当前时间
+ */
 
         SimpleDateFormat    formatter    =   new    SimpleDateFormat    ("yyyy年MM月dd日    HH:mm:ss     ");
         Date curDate    =   new    Date(System.currentTimeMillis());//获取当前时间

@@ -22,16 +22,17 @@ public class HousesModelImpl implements HousesModel {
     //HousesPresenterImpl 调用  Presenter负责逻辑的处理，Model提供数据，View负责显示
     @Override
     public void loadHouses(String url,final int type,final OnLoadHousesListListener listener) {//HousesPresenterImpl 调用 impl接口继承层
-        Log.d("adssadas",String.valueOf(type));
+        Log.d("HousesModelImpl",String.valueOf(type));
 
         OkHttpUtils.ResultCallback<String> loadHousesCallback = new OkHttpUtils.ResultCallback<String>() {
             @Override
             public void onSuccess(String response) {
 //HousesPresenterImpl 调用
-                List<HousesBean> housesBeanList =GsonUtil.jsonToList(response, HousesBean.class);//   加.class
 
-
-
+                List<HousesBean> housesBeanList =GsonUtil.jsonToList(response, HousesBean.class);//   加.class   获得列表数据
+                /**
+                 * 存储列表数据
+                 */
                 for (int i = 0; i < housesBeanList.size(); i++) {
                     int n=housesBeanList.get(i).getHouseID();
                     List<HousesBean> findRepetition=DataSupport.select("*")
@@ -43,6 +44,15 @@ public class HousesModelImpl implements HousesModel {
 
                         housesBean.save();
                     }
+                    else
+                    {
+                        HousesBean housesBean=new HousesBean();
+                        housesBean.setCapacity(housesBeanList.get(i).getCapacity());
+                        housesBean.update(n);
+
+
+                    }
+
 
                 }
 
@@ -54,29 +64,29 @@ public class HousesModelImpl implements HousesModel {
                 }
                 else  if(type==2)
                 {
-                   // DataSupport.deleteAll(HousesBean.class,"rentPrice < ?","2000");
+
                     housesBeanList1=getType(type);
                 }
                 else  if(type==3)
                 {
-                    // DataSupport.deleteAll(HousesBean.class,"rentPrice < ?","2000");
+
                     housesBeanList1=getType(type);
                 }
                 else  if(type==4)
                 {
-                    // DataSupport.deleteAll(HousesBean.class,"rentPrice < ?","2000");
+
                     housesBeanList1=getType(type);
                 }
                 else  if(type==5)
                 {
-                    // DataSupport.deleteAll(HousesBean.class,"rentPrice < ?","2000");
+
                     housesBeanList1=getType(type);
                 }
                 else
                 {
                     housesBeanList1=housesBeanList;
                 }
-                Log.d("adssa",String.valueOf(housesBeanList1.size()));
+                Log.d("HousesModelImpl",String.valueOf(housesBeanList1.size()));
                 //
 
                 listener.onSuccess(housesBeanList1);//这行被我误删了
@@ -151,7 +161,7 @@ public class HousesModelImpl implements HousesModel {
                     List<HousesBean> housesBeans=DataSupport.select("*")
                             .where("sex = ?","女")
                             .find(HousesBean.class);
-                    //.findBySQL("select * from HousesBean where rentPrice between ? and ?","500","2000");
+
                     Log.d("return",String.valueOf(housesBeans.size()));
                     return housesBeans;
                 }
@@ -160,7 +170,7 @@ public class HousesModelImpl implements HousesModel {
                     List<HousesBean> housesBeans=DataSupport.select("*")
                             .where("area = ?","南昌县")
                             .find(HousesBean.class);
-                    //.findBySQL("select * from HousesBean where rentPrice between ? and ?","500","2000");
+
                     Log.d("return",String.valueOf(housesBeans.size()));
                     return housesBeans;
                 }
@@ -171,7 +181,5 @@ public class HousesModelImpl implements HousesModel {
                 }
 
             }
-
-
 
 }

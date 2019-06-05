@@ -1,8 +1,6 @@
 package com.daniel.JoyRent.beans;
 
-import org.litepal.crud.DataSupport;
-
-public class Rentrequest extends DataSupport {
+public class Rentrequest {
     private int reqId;
     private int member_ID;
     private int houseID;
@@ -10,6 +8,14 @@ public class Rentrequest extends DataSupport {
     private float budget;
     private String city;
     private String mateSex;
+
+    public String getReqTime() {
+        return reqTime;
+    }
+
+    public void setReqTime(String reqTime) {
+        this.reqTime = reqTime;
+    }
 
     public int getMember_ID() {
         return member_ID;
@@ -74,13 +80,8 @@ public class Rentrequest extends DataSupport {
         this.houseID = houseID;
     }
 
-    public String getReqTime() {
-        return reqTime;
-    }
 
-    public void setReqTime(String reqTime) {
-        this.reqTime = reqTime;
-    }
+
 
     public float getBudget() {
         return budget;

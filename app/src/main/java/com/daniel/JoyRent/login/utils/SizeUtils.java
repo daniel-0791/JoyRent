@@ -2,7 +2,7 @@ package com.daniel.JoyRent.login.utils;
 
 import android.content.Context;
 
-
+//文字工具包
 public class SizeUtils {
 
     public static int dip2px(Context context, float dpValue) {

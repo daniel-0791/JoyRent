@@ -3,7 +3,7 @@
     <!--数据库名字-->
     <dbname value="user" />
     <!--数据库版本-->
-    <version value="12" />
+    <version value="13" />
     <list>
         <!--根据model映射创建表-->
         <mapping class="com.daniel.JoyRent.beans.PersonInfo" />

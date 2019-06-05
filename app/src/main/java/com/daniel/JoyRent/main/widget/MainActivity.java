@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.daniel.JoyRent.House.widget.HousesFragment;
 import com.daniel.JoyRent.House.widget.nav_secondFrament;
-import com.daniel.JoyRent.Map.Referral;
 import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.Rental.RentalHouses;
 import com.daniel.JoyRent.about.widget.AboutFragment;
@@ -96,9 +95,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
                 }
                 if (newTabId == R.id.tab_nearby) {
                     // 已经选择了这个标签，又点击一次。即重选。
-                    Intent intent = new Intent();
-                    intent.setClass(MainActivity.this, Referral.class);
-                    startActivity(intent);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new nav_secondFrament()).commit();//源生API里的切换其他页面，
+
                     return true;
                     // nearby.removeBadge();
                 }
@@ -190,6 +188,15 @@ public class MainActivity extends AppCompatActivity implements MainView {
         int id = getIntent().getIntExtra("id", 0);
         if (id == 1) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new MyIndex()).commit();//源生API里的切换其他页面，
+            /**
+             * 解决跳转到个人首页的问题
+             */
+            getIntent().putExtra("id",0);
+        }
+        else
+        {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new HousesFragment()).commit();//源生API里的切换其他页面，NewsFragment里 我现在换成house的
+            getIntent().putExtra("id",0);
         }
 
         super.onResume();

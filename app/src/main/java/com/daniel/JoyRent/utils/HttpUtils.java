@@ -3,6 +3,7 @@ package com.daniel.JoyRent.utils;
 import android.util.Log;
 
 import com.daniel.JoyRent.beans.PersonInfo;
+import com.daniel.JoyRent.beans.Rentrequest;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -132,7 +133,9 @@ public class HttpUtils {
 
 
     }
-
+    /**
+     * 查询手机
+     */
     public PersonInfo PhoneVerify(String url, String phone) throws IOException {
 
 
@@ -168,6 +171,52 @@ public class HttpUtils {
 
             return  jsonBean1;
         }
+
+
+
+    }
+    /**
+     * 查询订单
+     */
+    public Rentrequest FindOrder(String url, String ID) throws IOException {
+
+
+
+
+
+        RequestBody requestBody=new FormBody.Builder()
+                .add("member_ID", ID)
+                .build();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build();
+
+        Response response = client.newCall(request).execute();
+
+        String result = response.body().string();
+
+
+
+        List<Rentrequest> jsonBeanlist =GsonUtil.jsonToList(result, Rentrequest.class);//   加.class
+
+
+        if (jsonBeanlist.size()!=0)
+        {
+            Rentrequest jsonBean=jsonBeanlist.get(0);
+            Rentrequest  login=jsonBean;
+            Log.d(TAG, "user:" + jsonBean);
+            return jsonBean;
+
+
+        }
+        else {
+            Rentrequest  jsonBean1 = null;
+
+            return  jsonBean1;
+        }
+
 
 
 

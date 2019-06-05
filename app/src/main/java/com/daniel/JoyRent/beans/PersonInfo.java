@@ -100,20 +100,6 @@ public class PersonInfo extends DataSupport {
 
     @Override
     public String toString() {
-
-
-/*
-        return "PersonInfo{" +
-                "\"member_ID\"" + member_ID +
-                ", member_name='" + member_name + '\'' +
-                ", member_password='" + member_password + '\'' +
-                ", member_image='" + member_image + '\'' +
-                ", member_idcard='" + member_idcard + '\'' +
-                ", member_phone='" + member_phone + '\'' +
-                ", member_email='" + member_email + '\'' +
-                ", member_sex='" + member_sex + '\'' +
-                '}';*/
-
         return " {\"member_sex\":\"" + member_sex + "\"," + "\"member_name\":\""
                 + member_name + "\"," + "\"member_ID\":\""
                 + member_ID + "\","+ "\"member_phone\":\"" + member_phone + "\","

@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
 import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.beans.PersonInfo;
 import com.daniel.JoyRent.commons.Urls;
@@ -109,9 +110,13 @@ public class modifiedData extends AppCompatActivity  implements View.OnClickList
 
 
 
-        jsonData=personInfo.toString();
 
-        String filename1="Jerry";
+
+        String sa=JSON.toJSONString(personInfo);
+        Log.d("modifiedData",sa);
+
+
+        jsonData=sa;
 
 
 
@@ -128,7 +133,7 @@ public class modifiedData extends AppCompatActivity  implements View.OnClickList
 
                         @Override
                         public void onResponse(Call call, Response response) throws IOException {
-                            Log.d("aaaa","chengggong l ");
+                            Log.d("modifiedData","个人信息修改成功 ");
                             /**
                              * 成功后跳转
                              */

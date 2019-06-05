@@ -11,11 +11,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.daniel.JoyRent.R;
 import com.daniel.JoyRent.Rental.House_order;
 import com.daniel.JoyRent.beans.PersonInfo;
 import com.daniel.JoyRent.commons.Urls;
+import com.daniel.JoyRent.main.widget.MainActivity;
 import com.daniel.JoyRent.utils.HttpUtils;
 import com.daniel.JoyRent.utils.ImageLoaderUtils;
 
@@ -28,20 +30,17 @@ public class MyIndex extends Fragment implements View.OnClickListener {
 
 
 
-    private TextView detailSex;
-    private TextView detailEmail;
-
-    private TextView tv_email1;
     private LinearLayout lay_info;
     private LinearLayout lay_order;
-    private TextView numberCard;
+    private LinearLayout lay_exit;
+    private TextView name;
     private ImageView imageView;
 
     public  String id="0";
     private String url2 = Urls.Commons+"/member/FindID";
     private PersonInfo result;
     public MyIndex() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -57,8 +56,6 @@ public class MyIndex extends Fragment implements View.OnClickListener {
             }
         });
 
-
-
         lay_order=(LinearLayout)getActivity().findViewById(R.id.lay_order);  //进入个人订单
         lay_order.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +64,18 @@ public class MyIndex extends Fragment implements View.OnClickListener {
 
             }
         });
+        lay_exit=(LinearLayout)getActivity().findViewById(R.id.lay_exit);  //进入个人订单
+        lay_exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OldLogin.userId=0;
+                Toast.makeText(getActivity(),"退出成功",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getActivity(), MainActivity.class));
+
+            }
+        });
+
+
         initView();
 
         if(OldLogin.userId!=0)
@@ -94,42 +103,12 @@ public class MyIndex extends Fragment implements View.OnClickListener {
                 e.printStackTrace();
             }
 
-      /*      new Thread( new Runnable() {
-                @Override
-                public void run()
-                {
-                    HttpUtils httpUtils=new HttpUtils();
 
-                    try {
-                        result = httpUtils.FindID( url2, id );
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-            }).start();*/
 
             showPersonInfo(result);
         }
 
 
-/*
-        String id=String.valueOf(OldLogin.userId);   //我的界面上的信息
-        List<PersonInfo> personInfo1= DataSupport.select("*")
-                .where("member_ID = ?",id)
-                .find(PersonInfo.class);
-
-        int number=personInfo1.size();
-        if(number==0)
-        {
-
-            detailEmail.setText("你好,请先登录");
-        }
-        else{
-            PersonInfo personInfoOne=personInfo1.get(0);
-          showPersonInfo(personInfoOne);
-        }*/
     }
 
     @Override
@@ -156,10 +135,8 @@ public class MyIndex extends Fragment implements View.OnClickListener {
 
 
 
-        String sex=personInfo.getMember_sex();
-        String email=personInfo.getMember_email();
-        String phone1=personInfo.getMember_phone();
-        String idcard=personInfo.getMember_idcard();
+        String name1=personInfo.getMember_name();
+
         /**
          * 图像路径修改
          */
@@ -169,7 +146,7 @@ public class MyIndex extends Fragment implements View.OnClickListener {
             ImageLoaderUtils.display(getActivity(), imageView, image1);
         }
 
-
+        name.setText("你好 "+name1);
 
 
     }
@@ -178,12 +155,14 @@ public class MyIndex extends Fragment implements View.OnClickListener {
 
 
 
-        detailEmail= (TextView) getActivity().findViewById(R.id.tv_email);
-        detailSex= (TextView)getActivity(). findViewById(R.id.detail_sex);
+        name= (TextView) getActivity().findViewById(R.id.tv_name);
+
 
 
         imageView= (ImageView) getActivity().findViewById(R.id.img_avatar); //换照片
 
 
     }
+
+
 }

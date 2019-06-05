@@ -1,7 +1,10 @@
 package com.daniel.JoyRent.login;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
@@ -21,15 +24,40 @@ public class PersonalInfo extends AppCompatActivity implements View.OnClickListe
     private TextView detailSex;
 
     private TextView detail_phone;
-
-
     private String url2 = Urls.Commons+"/member/FindID";
     public  String id="0";
+
+
+    @SuppressLint("HandlerLeak")
+    private Handler handler1=new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            if (msg.what == 1) {
+
+                PersonInfo personInfo= (PersonInfo) msg.obj;
+                String name=personInfo.getMember_name();
+                String sex=personInfo.getMember_sex();
+
+                String phone1=personInfo.getMember_phone();
+
+
+
+                detail_name.setText(name);
+                detailSex.setText(sex);
+
+                detail_phone.setText(phone1);
+            }
+        }
+
+
+    } ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal);
         initView();
+
         if(OldLogin.userId!=0)
         {
             id  =String.valueOf(OldLogin.userId);
@@ -42,7 +70,12 @@ public class PersonalInfo extends AppCompatActivity implements View.OnClickListe
                     final PersonInfo result;
                     try {
                         result = httpUtils.FindID( url2, id );
-                        showPersonInfo(result);
+
+                        Message msg = new Message();
+                        msg.what = 1;
+                        msg.obj=result;
+                        handler1.sendMessage(msg);
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -51,23 +84,6 @@ public class PersonalInfo extends AppCompatActivity implements View.OnClickListe
             }).start();
 
         }
-/*        List<PersonInfo> personInfo1= DataSupport.select("*")
-                .where("member_ID = ?",id)
-                .find(PersonInfo.class);
-
-        int number=personInfo1.size();
-        if(number==0)
-        {
-
-            detail_name.setText("请登录");
-            detailSex.setText("请登录");
-        }
-        else{
-            PersonInfo personInfoOne=personInfo1.get(0);
-            showPersonInfo(personInfoOne);
-        }*/
-
-
 
     }
 
@@ -75,24 +91,6 @@ public class PersonalInfo extends AppCompatActivity implements View.OnClickListe
 
 
 
-
-    public  void showPersonInfo(PersonInfo personInfo) {
-
-
-        String name=personInfo.getMember_name();
-        String sex=personInfo.getMember_sex();
-
-        String phone1=personInfo.getMember_phone();
-
-
-
-        detail_name.setText(name);
-        detailSex.setText(sex);
-
-        detail_phone.setText(phone1);
-
-
-    }
     private void initView() {
         //detailPhone= (TextView) findViewById(R.id.et_phone);
 

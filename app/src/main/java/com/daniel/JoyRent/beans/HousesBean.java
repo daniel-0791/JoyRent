@@ -27,9 +27,21 @@ public class HousesBean  extends DataSupport implements Serializable {
     private String elevator;
     private String image;
     private  String description;
+
+    public String getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(String capacity) {
+        this.capacity = capacity;
+    }
+
     private  String way;
     private  String rentNum;
     private  String sex;
+    private  String capacity;  //容量
+
+
 
     public String getSex() {
         return sex;
@@ -147,7 +159,7 @@ public class HousesBean  extends DataSupport implements Serializable {
         String arrayStr="[{\"name\":\"JSON\",\"age\":\"24\",\"address\":\"北京市西城区\"}]";
         //转化为list
 
-        return /* {"name":"jifeng","company":"taobao"}; */
+        return
                 " {\"rentPrice\":\"" + rentPrice + "\","   + "\"area\":\"" + area+ "\","  +"\"checkInDate\":\"" + checkInDate+ "\","  + "\"houseName\":\"" + houseName+ "\"," + "\"houseType\":\"" + houseType+ "\","  +"\"elevator\":\"" + elevator+"\"," +"\"description\":\"" + description  +"\"" + "  }";
         //     "{'username':" + username + ","+"'password':"+password+"}";
             // +   +"\"area\":\"" + area+ "\","

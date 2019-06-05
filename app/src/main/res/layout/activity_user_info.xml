@@ -61,11 +61,11 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/tv_email"
+                            android:id="@+id/tv_name"
                             style="@style/text_white"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="4dp"
-                            android:text="你的邮箱"
+                            android:text="请登录"
                             android:textSize="13sp" />
                     </LinearLayout>
                 </RelativeLayout>
@@ -342,7 +342,8 @@
                     android:background="@color/bg_main" />
 
                 <LinearLayout
-                    android:id="@+id/lay_set"
+
+                    android:id="@+id/lay_exit"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:background="@color/white"

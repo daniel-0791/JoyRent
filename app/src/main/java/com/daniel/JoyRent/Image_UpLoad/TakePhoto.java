@@ -3,7 +3,6 @@ package com.daniel.JoyRent.Image_UpLoad;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,11 +17,6 @@ import com.daniel.JoyRent.login.OldLogin;
 import com.daniel.JoyRent.main.widget.MainActivity;
 import com.daniel.JoyRent.utils.OkHttp3Util;
 import com.squareup.picasso.Picasso;
-import com.zaaach.citypicker.CityPicker;
-import com.zaaach.citypicker.adapter.OnPickListener;
-import com.zaaach.citypicker.model.City;
-import com.zaaach.citypicker.model.LocateState;
-import com.zaaach.citypicker.model.LocatedCity;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,7 +47,7 @@ public class TakePhoto extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_photo);
         inintView();
-        findViewById(R.id.btn_pick).setOnClickListener(new View.OnClickListener() {
+       /* findViewById(R.id.btn_pick).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CityPicker.from(TakePhoto.this)
@@ -90,7 +84,7 @@ public class TakePhoto extends AppCompatActivity implements View.OnClickListener
                         })
                         .show();
             }
-        });
+        });*/
     }
 
     private void inintView() {
@@ -163,7 +157,7 @@ public class TakePhoto extends AppCompatActivity implements View.OnClickListener
              */
             case R.id.upImageId:
               String id=String.valueOf(OldLogin.userId);
-                String filename=OldLogin.IdCard;
+
 
                 OkHttp3Util.uploadFile1(Url,imageFile,id, new okhttp3.Callback() {
                     @Override

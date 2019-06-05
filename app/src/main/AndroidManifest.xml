@@ -33,11 +33,10 @@
     <application
         android:name="org.litepal.LitePalApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Map.MapMain" />
 
         <service
             android:name="com.baidu.location.f"
@@ -87,7 +86,6 @@
         <activity android:name=".login.PersonalInfo" />
         <activity android:name=".login.modifiedData" />
         <activity android:name=".Rental.House_order" />
-        <activity android:name=".Map.Referral" />
     </application>
 
 </manifest>

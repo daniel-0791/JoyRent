@@ -34,8 +34,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.register);
 
 
-       /* fab= (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(this);*/
     username1=(EditText)findViewById(R.id.et_username);
     password1=(EditText)findViewById(R.id.et_password);
     password2=(EditText)findViewById(R.id.et_RePassword);
@@ -103,8 +101,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
-
 
 
             }

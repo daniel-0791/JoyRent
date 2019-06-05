@@ -144,7 +144,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="90dp"
             android:gravity="center"
-            android:text="使用第三方登录"
+            android:text="点击使用短信登录"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:visibility="visible"/>

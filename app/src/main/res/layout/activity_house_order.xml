@@ -44,7 +44,7 @@
             android:paddingLeft="20dp"
             android:layout_weight="5"
             android:layout_gravity="center_vertical"
-            android:text="申请人" />
+            android:text="发起人房源ID" />
 
         <TextView
             android:id="@+id/proposer"
@@ -107,8 +107,7 @@
         android:layout_marginTop="10dp"
         android:background="#808080" />
     <LinearLayout
-        android:id="@+id/alterPhoto"
-        android:onClick="alterPhoto"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -145,45 +144,15 @@
         android:background="#808080"
         />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"  android:layout_marginTop="20dp">
 
-        <TextView
-            android:id="@+id/textView222"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:layout_weight="5"
-            android:layout_gravity="center_vertical"
-            android:text="申请时间" />
-
-
-        <TextView
-            android:id="@+id/requestTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical"
-            android:text="登录后查看" />
-
-        <ImageView
-            android:id="@+id/changetouxiang232"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:src="@drawable/xiangyou" />
-
-    </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
         android:background="#808080" />
     <LinearLayout
-        android:id="@+id/ChangeDetail"
-        android:onClick="ChangeDetail"
+
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"  android:layout_marginTop="20dp">
@@ -202,7 +171,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center_vertical"
-            android:text="点击修改" />
+            android:text="登录后查看" />
 
 
         <ImageView
