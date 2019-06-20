@@ -199,7 +199,11 @@ public class HousesListFragment extends Fragment implements HousesView, SwipeRef
             mAdapter.notifyDataSetChanged();
         }
         View view = getActivity() == null ? mRecyclerView.getRootView() : getActivity().findViewById(R.id.drawer_layout);
-        Snackbar.make(view, getString(R.string.load_fail), Snackbar.LENGTH_SHORT).show();
+        //修复捕获异常
+        if (isAdded()) {
+            Snackbar.make(view, getString(R.string.load_fail), Snackbar.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override

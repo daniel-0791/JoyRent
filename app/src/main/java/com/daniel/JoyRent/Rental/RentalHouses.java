@@ -176,9 +176,7 @@ public class RentalHouses extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
+
 
 
 
@@ -193,7 +191,7 @@ public class RentalHouses extends AppCompatActivity implements View.OnClickListe
 
                         @Override
                         public void onResponse(Call call, Response response) throws IOException {
-                            Log.d("aaaa","chengggong l ");
+                            Log.d("aaaa","成功 l ");
                             Toast.makeText(RentalHouses.this, "上传成功", Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -209,8 +207,7 @@ public class RentalHouses extends AppCompatActivity implements View.OnClickListe
 
                 }
 
-            }
-        }).start();
+
 
     }
     /**

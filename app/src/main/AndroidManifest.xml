@@ -81,7 +81,6 @@
             android:name=".Image_UpLoad.TakePhoto"
             android:theme="@style/DefaultCityPickerTheme" />
         <activity android:name=".Rental.RentalHouses" />
-        <activity android:name=".Rental.FindMyMates" />
         <activity android:name=".login.OldLogin" />
         <activity android:name=".login.PersonalInfo" />
         <activity android:name=".login.modifiedData" />

@@ -64,7 +64,7 @@ public class MyIndex extends Fragment implements View.OnClickListener {
 
             }
         });
-        lay_exit=(LinearLayout)getActivity().findViewById(R.id.lay_exit);  //进入个人订单
+        lay_exit=(LinearLayout)getActivity().findViewById(R.id.lay_exit);
         lay_exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

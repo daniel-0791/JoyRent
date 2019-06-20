@@ -24,17 +24,43 @@ public class HousesModelImpl implements HousesModel {
     public void loadHouses(String url,final int type,final OnLoadHousesListListener listener) {//HousesPresenterImpl 调用 impl接口继承层
         Log.d("HousesModelImpl",String.valueOf(type));
 
+
         OkHttpUtils.ResultCallback<String> loadHousesCallback = new OkHttpUtils.ResultCallback<String>() {
             @Override
             public void onSuccess(String response) {
 //HousesPresenterImpl 调用
 
-                List<HousesBean> housesBeanList =GsonUtil.jsonToList(response, HousesBean.class);//   加.class   获得列表数据
+
+                List<HousesBean> housesBeanList = null;
+                /**
+                 * 访问不到网络的时候下一部是到达不了的，loadhouses里是callback
+                 */
+                try {
+                   housesBeanList =GsonUtil.jsonToList(response, HousesBean.class);//   加.class   获得列表数据
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+
+                }
+
                 /**
                  * 存储列表数据
                  */
+                if (housesBeanList==null)
+                {
+                    List<HousesBean> NoOnline=DataSupport.select("*")
+
+                            .find(HousesBean.class);
+                    housesBeanList=NoOnline;
+
+                }
+
                 for (int i = 0; i < housesBeanList.size(); i++) {
                     int n=housesBeanList.get(i).getHouseID();
+                    /**
+                     * 在数据库查找有没有房源，若无，添加。若有，更新容量，这里若不连数据库，容量每次都会刷新到初始
+                     */
                     List<HousesBean> findRepetition=DataSupport.select("*")
                             .where("houseID = ?",String.valueOf(n))
                             .find(HousesBean.class);
@@ -94,7 +120,11 @@ public class HousesModelImpl implements HousesModel {
 ;
             @Override
             public void onFailure(Exception e) {
-                listener.onFailure("load house list failure.");
+                List<HousesBean> housesBeanList = null;
+                List<HousesBean> NoOnline=DataSupport.findAll(HousesBean.class);
+                housesBeanList=NoOnline;
+                listener.onSuccess(housesBeanList);//这行被我误删了
+              //  listener.onFailure("load house list failure.");
             }
         };
         OkHttpUtils.get(url, loadHousesCallback);
